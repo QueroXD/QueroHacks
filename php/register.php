@@ -1,5 +1,25 @@
 <?php
     require "../lib/registerDBuser.php";
+
+    $password = '';
+    $verifiedPassword = '';
+
+    if ($_SERVER["REQUEST_METHOD"]=="POST") {
+        // Obtener los datos del formulario
+        $username = $_POST['username'];
+        $mail = $_POST['mail'];
+        $fName = $_POST['fName'];
+        $lName = $_POST['lName'];
+        $password = $_POST['passwd'];
+        $verifiedPassword = $_POST['verifyedpasswd'];
+
+        // Llamar a la función insertUser() para insertar el usuario en la base de datos
+        if (insertUser($username, $password, $mail, $fName, $lName)) {
+            echo "Usuario registrado exitosamente.";
+        } else {
+            echo "Error al registrar el usuario.";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +36,8 @@
         <div id="container-form">
             <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa">
             <h1>Signup</h1>
-            <form method="post">
+            <?php if($password != $verifiedPassword){echo"<h2>The passwords are different</h2>";} ?>
+            <form method="post" action="../lib/registerDBuser.php">
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" name="username" id="username" required>

@@ -28,6 +28,10 @@ body {
     align-items: center;
 }
 
+h2{
+    color: red;
+}
+
 #iconoEmpresa {
     width: 10em;
     height: 10em;
