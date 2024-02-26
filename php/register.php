@@ -1,3 +1,6 @@
+<?php
+    require "../lib/registerDBuser.php";
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -36,7 +39,7 @@
                 </div>
                 <div>
                     <label for="username">Verify Password:</label>
-                    <input type="text" name="username" id="username" required>
+                    <input type="password" name="verifyedpasswd" id="verifyedpasswd" required>
                 </div>
                 <div>
                     <label for="agree">
