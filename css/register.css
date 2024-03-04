@@ -1,9 +1,34 @@
-/* @font-face {
-    font-family: 'PontiacBlack';
-    src: url('../Recursos/Fontspring-DEMO-pontiac_black.otf') format('opentype');
-} */
+.parametersContainer{
+    display: flex;
+    flex-direction: row;
+}
 
-/* html {
-    min-height: 100%;
-    display: grid;
-} */
+.parametersContainer label{
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.parametersContainer input{
+    flex: 2;
+
+    width: 100%;
+}
+
+.terms {
+    display: flex;
+    flex-direction: row;
+}
+
+.terms p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.terms a{
+    margin-left: 5px;
+}
+

@@ -13,7 +13,7 @@
     height: 10em;
 }
 
-label, footer{
+label, footer, p{
     color: white;
 }
 
@@ -24,7 +24,7 @@ h2{
 body {
     font-family: 'Arial';
     margin: auto;
-    background-image: url("../img/backgroundv2.webp");
+    background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -90,8 +90,8 @@ input {
     flex: 1;
 
     margin: 0.25em;
-    padding-left: 0.5em;
-    padding-right: 2.5em;
+    /* padding-left: 0.5em;
+    padding-right: 2.5em; */
 
     min-height: 2em;
 

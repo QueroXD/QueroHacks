@@ -39,35 +39,36 @@
             <h1>Sign up</h1>
             <?php if($password != $verifiedPassword){echo"<h2>The passwords are different</h2>";} ?>
             <form method="post" action="../lib/registerDBuser.php">
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" required>
+                <div id="parameters">
+                    <div class="parametersContainer">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" required>
+                    </div>
+                    <div class="parametersContainer">
+                        <label for="mail">Email:</label>
+                        <input type="mail" name="mail" id="mail" required>
+                    </div>
+                    <div class="parametersContainer">
+                        <label for="fName">First Name:</label>
+                        <input type="text" name="fName" id="fName" required>
+                    </div>
+                    <div class="parametersContainer">
+                        <label for="lName">Last Name:</label>
+                        <input type="text" name="lName" id="lName" required>
+                    </div>
+                    <div class="parametersContainer">
+                        <label for="passwd">Password:</label>
+                        <input type="password" name="passwd" id="passwd" required>
+                    </div>
+                    <div class="parametersContainer">
+                        <label for="username">Verify Password:</label>
+                        <input type="password" name="verifyedpasswd" id="verifyedpasswd" required>
+                    </div>
                 </div>
-                <div>
-                    <label for="mail">Email:</label>
-                    <input type="mail" name="mail" id="mail" required>
-                </div>
-                <div>
-                    <label for="fName">First Name:</label>
-                    <input type="text" name="fName" id="fName" required>
-                </div>
-                <div>
-                    <label for="lName">Last Name:</label>
-                    <input type="text" name="lName" id="lName" required>
-                </div>
-                <div>
-                    <label for="passwd">Password:</label>
-                    <input type="password" name="passwd" id="passwd" required>
-                </div>
-                <div>
-                    <label for="username">Verify Password:</label>
-                    <input type="password" name="verifyedpasswd" id="verifyedpasswd" required>
-                </div>
-                <div>
-                    <label for="agree">
-                        <input type="checkbox" name="agree" id="agree" value="yes"/> I agree
-                        with the <a href="#" title="term of services">term of services</a>
-                    </label>
+                <div class="terms">
+                    <label for="agree" class="agree"></label>
+                    <input type="checkbox" name="agree" id="agree" value="yes"/> 
+                    <p>I agree with the <a href="#" title="term of services"> term of services</a></p>
                 </div>
                 <input type="submit" value="REGISTER" id="button">
                 <footer>Already a member? <a href="index.php">Login here</a></footer>

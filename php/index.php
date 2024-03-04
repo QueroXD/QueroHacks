@@ -25,7 +25,7 @@ try {
             echo "Nombre de usuario o contraseña incorrectos.";
         }
     }
-} catch(PDOException $e) {
+} catch (PDOException $e) {
     // Manejo de excepciones
     echo "Error de conexión: " . $e->getMessage();
 }
@@ -36,32 +36,35 @@ $db = null;
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>QueroHacks</title>
-  <link rel="stylesheet" href="../css/common.css">
-	<!-- <link rel="stylesheet" href="../css/register.css"> -->
-  <link rel="icon" type="image/x-icon" href="../img/QueroHacks_Icon.png">
-</head>
-<body>
-<section class="vh-100 gradient-custom">
-  <div id="container-form">
-    <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa">
-    <h1>Sign In</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" class="form-control form-control-lg">
+  <head>
+    <title>QueroHacks</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="icon" type="image/x-icon" href="../img/QueroHacks_Icon.png" />
+  </head>
+  <body>
+    <main>
+      <div id="container-form">
+        <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa"/>
+        <h1>Sign In</h1>
+        <form method="post">
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="passwd" name="passwd" required />
+          </div>
+          <input type="submit" value="SUBMIT" id="button" />
+        </form>
+        <div>
+          <footer> New user? <a href="register.php">Sign Up</a></footer>
+        </div>
       </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" class="form-control form-control-lg">
-      </div>
-      <input type="submit" value="SUBMIT" id="button">
-    </form>
-    <div>
-      <footer class="mb-0">New user? <a href="register.php" class="text-white-50 fw-bold">Sign Up</a></footer>
-    </div>
-  </div>
-</section>
-</body>
+    </main>
+  </body>
 </html>
