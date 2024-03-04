@@ -36,7 +36,7 @@
     <main>
         <div id="container-form">
             <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa">
-            <h1>Sign up</h1>
+            <!-- <h1>Sign up</h1> -->
             <?php if($password != $verifiedPassword){echo"<h2>The passwords are different</h2>";} ?>
             <form method="post" action="../lib/registerDBuser.php">
                 <div id="parameters">

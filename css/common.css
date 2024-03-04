@@ -17,6 +17,12 @@ label, footer, p{
     color: white;
 }
 
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #3687eb;
+}
+
 h2{
     color: red;
 }
@@ -49,7 +55,6 @@ body {
     align-items: center;
 
     background: url('../img/darkblue.webp');
-    /* backdrop-filter: blur(5px); */
 }
 
 
@@ -70,6 +75,7 @@ body {
 h1 {
     font-size: 1.2em;
     margin-bottom: 0.4em;
+
     justify-content: center;
     color: aliceblue;
 }
@@ -90,8 +96,6 @@ input {
     flex: 1;
 
     margin: 0.25em;
-    /* padding-left: 0.5em;
-    padding-right: 2.5em; */
 
     min-height: 2em;
 
@@ -113,7 +117,10 @@ input {
     min-height: 2em;
     width: 35%;
 
-    background-color: rgb(243, 245, 248);
+    font-family: 'PontiacBlack';
+    font-weight: bold;
+    color: white;
+    background-color: #c25462;
 }
 
 /* ! Sistema Responsive de 12 columnes -- SE TIENE QUE COPIAR Y PEGAR */
