@@ -10,20 +10,25 @@ try {
         $password = $_POST['password'];
 
         // Consulta preparada para evitar inyección de SQL
-        $stmt = $db->prepare("SELECT * FROM users WHERE username = :username AND passHash = :password");
+        $stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
         $stmt->execute();
 
         // Verificar si el usuario existe en la base de datos
         if ($stmt->rowCount() == 1) {
-            // Usuario autenticado correctamente
-            session_start();
-            $_SESSION['username'] = $username;
-            header("Location: home.php");
-            // Aquí podrías redirigir al usuario a otra página
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (password_verify($password, $user['passHash'])) {
+                // Usuario autenticado correctamente
+                session_start();
+                $_SESSION['username'] = $username;
+                header("Location: home.php");
+                exit();
+            } else {
+                // Contraseña incorrecta
+                echo "Nombre de usuario o contraseña incorrectos.";
+            }
         } else {
-            // Usuario o contraseña incorrectos
+            // Usuario no encontrado
             echo "Nombre de usuario o contraseña incorrectos.";
         }
     }
@@ -35,6 +40,7 @@ try {
 // Cerrar la conexión
 $db = null;
 ?>
+
 
 <!DOCTYPE html>
 <html>
