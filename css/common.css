@@ -23,7 +23,11 @@ a{
     color: #3687eb;
 }
 
-h2{
+#correct{
+    color: green;
+}
+
+#incorrect{
     color: red;
 }
 
@@ -111,16 +115,13 @@ input {
     border: solid 2px red;
 }
 
-#button {
-    padding: 0; /*! Resetea el padding de los inputs */
-    margin-top: 1em;
-    min-height: 2em;
-    width: 35%;
-
+.button {
+    padding: 5px 15px;
     font-family: 'PontiacBlack';
     font-weight: bold;
     color: white;
-    background-color: #c25462;
+    background-color: #c25462;    
+    cursor: pointer;
 }
 
 /* ! Sistema Responsive de 12 columnes -- SE TIENE QUE COPIAR Y PEGAR */

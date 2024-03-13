@@ -1,17 +1,13 @@
 <?php
 require_once('login.php'); // Incluye el archivo de conexión a la base de datos
 
-try {
-    // Configuración de PDO para lanzar excepciones en caso de errores
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         // Verificar si el nombre de usuario o correo electrónico ya existen en la base de datos
-        $stmt = $db->prepare("SELECT * FROM usuarios WHERE username = :username OR email = :email");
+
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -29,10 +25,6 @@ try {
             echo "¡Registro exitoso!"; // También podrías redirigir al usuario a otra página después del registro
         }
     }
-} catch(PDOException $e) {
-    // Manejo de excepciones
-    echo "Error de conexión: " . $e->getMessage();
-}
 
 // Cerrar la conexión
 $db = null;

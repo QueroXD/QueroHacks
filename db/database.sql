@@ -10,9 +10,10 @@ CREATE TABLE IF NOT EXISTS `users`(
     `passHash`  Varchar(60) NOT NULL,
     `userFirstName` VARCHAR(60) NOT NULL,
     `userLastName` VARCHAR(120) NOT NULL,
-    `creationDate` DATETIME NOT NULL,
-    `removeDat` DATETIME NOT NULL,
-    `lastSignIn` DATETIME NOT NULL,
-    `active` TINYINT(1) NOT NULL,
+    `creationDate` DATETIME NULL,
+    `removeDat` DATETIME NULL,
+    `lastSignIn` DATETIME NULL,
+    `active` TINYINT(1) NULL,
     PRIMARY KEY (`idUser`)
 );
+

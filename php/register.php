@@ -1,11 +1,9 @@
 <?php
-    require "../lib/registerDBuser.php";
+    require "../lib/consultas.php";
 
-    $password = '';
-    $verifiedPassword = '';
+    $useradd = false;
 
     if ($_SERVER["REQUEST_METHOD"]=="POST") {
-        // Obtener los datos del formulario
         $username = $_POST['username'];
         $mail = $_POST['mail'];
         $fName = $_POST['fName'];
@@ -13,22 +11,23 @@
         $password = $_POST['passwd'];
         $verifiedPassword = $_POST['verifyedpasswd'];
 
-        // Llamar a la función insertUser() para insertar el usuario en la base de datos
-        if (insertUser($username, $password, $mail, $fName, $lName)) {
-            echo "Usuario registrado exitosamente.";
+        if (checkUser($username, $password)==1) {
+            $respuesta = '<h2 id="incorrect">The user already exists</h2>';
         } else {
-            echo "Error al registrar el usuario.";
+            insertUser($username, $mail, $fName, $lName, $password);
+            $respuesta = '<h2 id="correct">User added succesfully</h2>';
         }
+        $useradd = true;
     }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>QueroHacks - register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="../css/common.css">     
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/register.css">
     <link rel="icon" type="image/x-icon" href="../img/QueroHacks_Icon.png">
 </head>
@@ -36,9 +35,8 @@
     <main>
         <div id="container-form">
             <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa">
-            <!-- <h1>Sign up</h1> -->
-            <?php if($password != $verifiedPassword){echo"<h2>The passwords are different</h2>";} ?>
-            <form method="post" action="../lib/registerDBuser.php">
+            <?php if($useradd == true){echo $respuesta;}?>
+            <form method="post">
                 <div id="parameters">
                     <div class="parametersContainer">
                         <label for="username">Username:</label>
@@ -67,10 +65,10 @@
                 </div>
                 <div class="terms">
                     <label for="agree" class="agree"></label>
-                    <input type="checkbox" name="agree" id="agree" value="yes"/> 
+                    <input type="checkbox" name="agree" id="agree" value="yes"/>
                     <p>I agree with the <a href="#" title="term of services"> term of services</a></p>
                 </div>
-                <input type="submit" value="REGISTER" id="button">
+                <input type="submit" value="REGISTER" class="button">
                 <footer>Already a member? <a href="index.php">Login here</a></footer>
             </form>
         </div>
