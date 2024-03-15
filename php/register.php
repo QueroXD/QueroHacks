@@ -1,4 +1,7 @@
 <?php
+    // option = 1 --> register mode
+    // option = 2 --> login mode
+
     require "../lib/consultas.php";
 
     $useradd = false;
@@ -11,9 +14,9 @@
         $password = $_POST['passwd'];
         $verifiedPassword = $_POST['verifyedpasswd'];
 
-        if (checkUser($username, $password)==1) {
+        if (checkUser($username, $password, 1)==1) {
             $respuesta = '<h2 id="incorrect">The user already exists</h2>';
-        } else {
+        } else if(checkUser($username, $password, 1)==0) {
             insertUser($username, $mail, $fName, $lName, $password);
             $respuesta = '<h2 id="correct">User added succesfully</h2>';
         }

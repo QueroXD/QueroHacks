@@ -14,6 +14,10 @@ CREATE TABLE IF NOT EXISTS `users`(
     `removeDat` DATETIME NULL,
     `lastSignIn` DATETIME NULL,
     `active` TINYINT(1) NULL,
+    `activationDate` DATETIME NULL,
+    `activationCode` CHAR(64) NULL,
+    `resetPassExpiry` DATETIME NULL,
+    `resetPassCode` CHAR (64) NULL,
     PRIMARY KEY (`idUser`)
 );
 
