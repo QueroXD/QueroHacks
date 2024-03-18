@@ -37,7 +37,7 @@
 <body>
     <main>
         <div id="container-form">
-            <img src="../img/QueroHacks_Logo.jpg" alt="Logo ClassWave" id="iconoEmpresa">
+            <img src="../img/QueroHacks_Logo.jpg" alt="Logo" id="iconoEmpresa">
             <?php if($useradd == true){echo $respuesta;}?>
             <form method="post">
                 <div id="parameters">
