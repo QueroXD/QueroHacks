@@ -72,7 +72,7 @@
                     <p>I agree with the <a href="#" title="term of services"> term of services</a></p>
                 </div>
                 <input type="submit" value="REGISTER" class="button">
-                <footer>Already a member? <a href="index.php">Login here</a></footer>
+                <footer>Already a member? <a href="../index.php">Login here</a></footer>
             </form>
         </div>
     </main>
