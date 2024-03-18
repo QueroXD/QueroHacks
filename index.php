@@ -45,7 +45,7 @@
           <input type="submit" value="SUBMIT" class="button" />
         </form>
         <div>
-          <footer> New user? <a href="register.php">Sign Up</a></footer>
+          <footer> New user? <a href="./php/register.php">Sign Up</a></footer>
         </div>
       </div>
     </main>
